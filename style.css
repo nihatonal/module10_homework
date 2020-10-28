@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+
+
+    margin: 0 auto;
+    margin-top: 2rem;
+    
+}
+.task{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 300px;
+    height: 150px;
+    border: 1px solid blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+.taskName{
+    font-size: 24px;
+    font-weight: bold;
+}
+#task-10-3-1-result {
+    width: 180px;
+    text-align: center;
+    font: 22px;
+    color: rgb(136, 24, 24);
+    padding: 5px 10px;
+}
+.task-btn{
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: orangered;
+    background: paleturquoise;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+ .add{
+     background-color: rgb(241, 230, 65);
+ }
+ .clear{
+    background-color: rgb(218, 218, 218);
+ }
+#task-10-3-2{
+    width: 180px;
+    text-align: center;
+    font: 22px;
+    color: rgb(136, 24, 24);
+    padding: 5px 10px;
+}
+
+input{
+    width:160px;
+    padding: 5px 10px;
+    outline: none;
+}
+.reverse p, .array p{
+    font-size: 16px;
+    text-align: center;
+}
+#resultNumber{
+    width: 180px;
+    height: 20px;
+    text-align: center;
+    font: 22px;
+    font-weight: bold;
+    color: rgb(136, 24, 24);
+    padding: 5px 10px;
+    border: 1px solid  rgb(136, 24, 24);
+}
+span{
+    font-weight: bold;
+}
+.array{
+    height: 250px;
+}
+
+.map{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.map p{
+    text-align: center;
+}
+.input-wrapper{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.showMap{
+    border: 1px solid fuchsia;
+    height: 150px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#mapResult{
+    text-align: left;
+}
