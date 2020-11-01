@@ -1,5 +1,6 @@
 /// 3.1
 var btn_Task_3 = document.getElementById("task-3");
+// Объявление переменных с помощью ключевого слова var - это устаревший синтаксис. Рекомендуется использовать для объявления переменных более современные ключевые слова let или const. Подробнее тут - https://habr.com/ru/company/ruvds/blog/420359/
 
 btn_Task_3.addEventListener('click', button => {
     let number = prompt("Write a number")
@@ -49,7 +50,8 @@ console.log(reverseStr);
 var btn_Task_3 = document.getElementById("task-4.4");
 
 btn_Task_3.addEventListener('click', button => {
-    var num = Math.floor(Math.random() * 100);
+    var num = Math.floor(Math.random() * 101);
+    // Тут не совсем верно, потому что ваш код возвращает число от 0 до 99, т.е. 100 не включено, а по условию должно быть. Выше исправила
     document.getElementById( "resultNumber").innerHTML= num;
     console.log(num);
 })
@@ -128,11 +130,14 @@ var btn_Check = document.getElementById("check2");
 
 
 btn_Check.addEventListener('click', button => {
-let totalOdd = 0;
-let totalEven = 0;
-let totalZero = 0;
+// let totalOdd = 0;
+// let totalEven = 0;
+// let totalZero = 0;
+// В случае объявления нескольких переменных разом можно использовать успрощенный синтаксис:
+let totalOdd = 0, totalEven = 0, totalZero = 0;
+
     for (let i = 0; i < items3.length; i++) {
-        if (!isNaN(items3[i]) && typeof(items3[i]) !== "boolean") {
+        if (!isNaN(items3[i]) && items3[i] !== "") { 
           if (items3[i] == 0) {
             totalZero++;
           } else if (items3[i] % 2 == 0) {
@@ -147,22 +152,24 @@ alert(message)
 
 })
 
+// В этом задании есть небольшая ошибка - пустые строки считаются как нули, потому что проверка введенных данных не совсем корректная. Вместо typeof(items3[i]) !== "boolean" нужно отсеять пустые значения, т.е. items3[i] !== "". Тип boolean в любом случае не может получиться при считывании значения из данного инпута, т.к. он имеет тип text и все введенные значения будут иметь тип string.
+
 // 7.8
 var btn_show = document.getElementById("showMap");
 
 btn_show.addEventListener("click", button => {
     let map = new Map();
-    let MapDecryption = "";
+    let mapDecryption = "";
     map.set("Sun", "Holiday");
     map.set("Monday", "Work");
     map.set(false, 0);
     map.set(true, 1);
     map.set([0, 1], [2, 3]);
-    MapKeys = Array.from(map.keys());
-    MapKeys.forEach((key) => {
-        MapDecryption += `<span>Key — </span> ${key} <span>Value — </span> ${map.get(key)} <br> `;
+    let mapKeys = Array.from(map.keys()); // Не забывайте ключевые слова при объявлении переменных. Также по общепринятому стандарту для именования переменных используется camelCase, т.е. имя перменной начинается с маленькой буквы
+    mapKeys.forEach((key) => {
+        mapDecryption += `<span>Key — </span> ${key} <span>Value — </span> ${map.get(key)} <br> `;
     });
-    document.getElementById("mapResult").innerHTML = MapDecryption;
+    document.getElementById("mapResult").innerHTML = mapDecryption;
     
 })
 
